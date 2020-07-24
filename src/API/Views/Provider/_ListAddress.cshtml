@@ -1,0 +1,87 @@
+﻿@model WEB.ViewModel.AddressViewModel
+
+@{
+    ViewData["Title"] = "Address";
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.complement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Neighborhood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.PublicPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.complement)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Neighborhood)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.City)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.State)
+            </td>
+            <td>
+                <a supress-by-action="Edit" class="btn btn-warning btn-modal" asp-controller="Provider" asp-action="EditAddress" asp-route-id="@Model.Id">Edit</a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body"></div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary  btn-close" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-save">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+
+
