@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using WEB.ViewModel;
 
 namespace WEB.Controllers
 {
+    [Authorize]
     public class ProviderController : Controller
     {
         private readonly IMapper mapper;
